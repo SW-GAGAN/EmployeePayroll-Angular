@@ -1,0 +1,44 @@
+<app-header></app-header>
+<div class="main-content">
+    <div class="header-content">
+        <div class="emp-detail-text">
+            Employee Details
+        </div>
+        
+     <div class="searchbar">
+        <mat-icon>search</mat-icon>
+        </div> 
+        <button class="add-button" routerLink="/add" routerLinkActive="active"> +Add User</button>
+    </div>
+
+    <div class="table-main">        
+  
+        <table id="display" class="table">
+            <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Department</th>
+                <th>Salary</th>
+                <th>Start Date</th>
+                <th>Action</th>
+            </tr>
+            <tr *ngFor="let emp of employeeDetails">
+                <td>
+                    <img class="profile" src="/assets/profile-images/Ellipse -3.png">
+                </td>
+                <td>{{emp.name}}</td>
+                <td>{{emp.gender}}</td>
+                <td>
+                    <div class="dept-label">{{emp.departement}}</div>                    
+                </td>
+                <td>{{emp.salary}}</td>
+                <td>{{emp.start_date}}</td>
+                <td>
+                    <img id="1" onclick="remove(this)"  alt="Delete" src="..\assets\icons\delete-black-18dp.svg">
+                    <img id="1" onclick="update(this)"  alt="Edit" src="..\assets\icons\create-black-18dp.svg">
+                </td>
+            </tr>
+        </table>
+      </div>
+    </div>
